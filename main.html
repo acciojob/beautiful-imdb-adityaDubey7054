@@ -1,16 +1,79 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDb Movie Page Redesign</title>
+    <style>
+        /* Basic body setup with a background image */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image: url('https://images.unsplash.com/photo-1574285013029-29296a71930e?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Needed for positioning context */
+        }
+        
+        /* A dark overlay to make the text more readable */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
 
+        /* --- REQUIRED STYLES --- */
+
+        /* Styling for the movie poster image */
+        .moviePic {
+            /* Required Properties */
+            height: 450px;
+            width: 300px;
+            opacity: 0.85;
+            
+            /* Additional styles for better appearance */
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            z-index: 2; /* Ensures it's above the overlay */
+            position: relative;
+        }
+
+        /* Styling for the movie description text */
+        .movieDetail {
+            /* Required Properties */
+            position: absolute;
+            top: 50%;
+            width: 80%;
+            text-align: center;
+            font-size: 22px;
+            
+            /* Additional properties for precise centering and styling */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            line-height: 1.6;
+            z-index: 2; /* Ensures it's above the overlay */
+        }
+    </style>
+</head>
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+    <img src="https://image.tmdb.org/t/p/original/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg" alt="Dune: Part Two Movie Poster" class="moviePic">
+
+    <p class="movieDetail">
+        <b>Dune: Part Two (2024)</b><br>
+        Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the known universe, he endeavors to prevent a terrible future only he can foresee.
+    </p>
 
 </body>
-
 </html>
